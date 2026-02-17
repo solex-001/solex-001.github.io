@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Coding Business</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+
+        /* Hamburger menu for mobile */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        #home {
+            background-image: url('https://via.placeholder.com/1920x1080?text=Coding+Background'); /* Replace with your coding-themed image URL */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 1rem;
+            position: relative;
+        }
+
+        #home::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Overlay for better text visibility */
+        }
+
+        #home h1 {
+            font-size: 3rem;
+            z-index: 1;
+            margin-bottom: 1rem;
+        }
+
+        #home p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            z-index: 1;
+            margin-bottom: 2rem;
+        }
+
+        #home button {
+            z-index: 1;
+            padding: 1rem 2rem;
+            background-color: #ffd700;
+            border: none;
+            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #home button:hover {
+            background-color: #fff;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        #about {
+            background-color: #fff;
+        }
+
+        #courses {
+            background-color: #f4f4f4;
+        }
+
+        #blog {
+            background-color: #fff;
+        }
+
+        #contact {
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem;
+            flex: 1 1 300px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px 8px 0 0;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        form input, form textarea {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        form button {
+            padding: 0.75rem;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: #333;
+                width: 100%;
+                padding: 1rem 0;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 1rem 0;
+                text-align: center;
+            }
+
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+            }
+
+            #home h1 {
+                font-size: 2rem;
+            }
+
+            #home p {
+                font-size: 1.2rem;
+            }
+
+            .content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="menu-toggle">&#9776;</div> <!-- Hamburger icon -->
+        <ul>
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#blog">BLOG</a></li>
+            <li><a href="#courses">COURSES</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h1>My Coding Business</h1>
+        <p>Making websites is now one of the easiest things in the world. You just have to learn HTML, CSS, JavaScript and you are good to go. We offer expert coding services and training for your business needs.</p>
+        <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Visit Us To Know More</button>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <div class="content">
+            <p>We are a dedicated coding business providing top-notch web development services, custom software solutions, and coding education. Our team of experts helps businesses thrive in the digital world.</p>
+        </div>
+    </section>
+
+    <section id="blog">
+        <h2>Blog</h2>
+        <div class="content">
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200?text=Blog+Post+1" alt="Blog Post 1">
+                <h3>Latest Trends in Web Development</h3>
+                <p>Explore the newest technologies shaping the web.</p>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200?text=Blog+Post+2" alt="Blog Post 2">
+                <h3>Beginner's Guide to JavaScript</h3>
+                <p>Get started with JS in no time.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="courses">
+        <h2>Our Courses</h2>
+        <div class="content">
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200?text=Course+1" alt="Course 1">
+                <h3>HTML & CSS Fundamentals</h3>
+                <p>Learn the basics of web design.</p>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200?text=Course+2" alt="Course 2">
+                <h3>Advanced JavaScript</h3>
+                <p>Dive deep into JS frameworks and tools.</p>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200?text=Course+3" alt="Course 3">
+                <h3>Full-Stack Development</h3>
+                <p>Become a complete developer.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        &copy; 2025 My Coding Business. All rights reserved.
+    </footer>
+
+    <script>
+        // Hamburger menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navUl = document.querySelector('nav ul');
+
+        menuToggle.addEventListener('click', () => {
+            navUl.classList.toggle('active');
+        });
+
+        // Smooth scrolling for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close menu on mobile after click
+                if (window.innerWidth <= 768) {
+                    navUl.classList.remove('active');
+                }
+            });
+        });
+
+        // Form submission (placeholder - in real app, use server-side)
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Message sent! (This is a demo)');
+            form.reset();
+        });
+    </script>
+</body>
+</html>
